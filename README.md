@@ -1,8 +1,6 @@
 # Jogo-da-Velha
-
 #include <stdio.h>
 #include <stdlib.h>
-
 int tabuleiro(char jogo[9]) {
 	system("cls");
 	printf("--- JOGO DA VELHA COM VETOR ---\n\n");
@@ -11,16 +9,13 @@ int tabuleiro(char jogo[9]) {
 	printf("\t %c | %c | %c \n", jogo[3], jogo[4], jogo[5]);
 	printf("\t-----------\n");
 	printf("\t %c | %c | %c \n", jogo[6], jogo[7], jogo[8]);
-
 	return 0;
 }
-
 int main()
 {
 	char casa[9] = { '1','2','3','4','5','6','7','8','9' };
 	char res;
 	int cont_jogada, jogada, vez = 0, limpar;
-
 	do {
 		cont_jogada = 1;
 		for (limpar = 0; limpar <= 8; limpar++)
@@ -59,7 +54,6 @@ int main()
 			if (casa[2] == 'X' && casa[5] == 'X' && casa[8] == 'X') { cont_jogada = 11; }
 			if (casa[0] == 'X' && casa[4] == 'X' && casa[8] == 'X') { cont_jogada = 11; }
 			if (casa[2] == 'X' && casa[4] == 'X' && casa[6] == 'X') { cont_jogada = 11; }
-
 			if (casa[0] == 'O' && casa[1] == 'O' && casa[2] == 'O') { cont_jogada = 12; }
 			if (casa[3] == 'O' && casa[4] == 'O' && casa[5] == 'O') { cont_jogada = 12; }
 			if (casa[6] == 'O' && casa[7] == 'O' && casa[8] == 'O') { cont_jogada = 12; }
@@ -68,7 +62,6 @@ int main()
 			if (casa[2] == 'O' && casa[5] == 'O' && casa[8] == 'O') { cont_jogada = 12; }
 			if (casa[0] == 'O' && casa[4] == 'O' && casa[8] == 'O') { cont_jogada = 12; }
 			if (casa[2] == 'O' && casa[4] == 'O' && casa[6] == 'O') { cont_jogada = 12; }
-
 		} while (cont_jogada <= 9);
 		tabuleiro(casa);
 		if (cont_jogada == 10) {
@@ -78,11 +71,9 @@ int main()
 		}if (cont_jogada == 12) {
 			printf("\nVencendor o jogador O\n");
 		}
-
 		printf("\nVamos jogar novamente?[S-N]\n");
 		scanf_s("%s", &res);
 	} while (res == 's',1);
-
 	system("pause");
 	return 0;
 }
